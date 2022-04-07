@@ -21,12 +21,10 @@ const Input = ({placeholder, name, type, value, handleChange}) =>(
 )
 const Greetings = () => {
   const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionsContext)
-  const {addressTo, amount, keyword, message } = formData
-
   const handleSubmit = (e) =>{
-    if(!addressTo||!amount||!keyword||!message) return 
-
+    const {addressTo, amount, keyword, message } = formData
     e.preventDefault()
+    if(!addressTo||!amount||!keyword||!message) return 
 
     sendTransaction()
   }
