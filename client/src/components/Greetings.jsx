@@ -21,7 +21,7 @@ const Input = ({placeholder, name, type, value, handleChange}) =>(
   </input>
 )
 const Greetings = () => {
-  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction,isLoading } = useContext(TransactionsContext)
+  const { connectWallet, currentAccount, formData, handleChange, sendTransaction,isLoading } = useContext(TransactionsContext)
   const handleSubmit = (e) =>{
     const {addressTo, amount, keyword, message } = formData
     e.preventDefault()
@@ -40,6 +40,7 @@ const Greetings = () => {
         </p>
         {!currentAccount && 
             <button type="button" onClick={() =>{ connectWallet()}} className="flex flex-row justify-center item-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]">
+              <AiFillPlayCircle className="text-white mr-2" />
               <p className="text-white text-base font-semibold">Connect Wallet </p>
             </button>
         }
@@ -73,7 +74,11 @@ const Greetings = () => {
           <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={handleChange}/>
           <Input placeholder="Enter message" name="message" type="text" handleChange={handleChange}/>
           <div className="h-[1px] w-full bg-gray-400 my-2"/>
-          {isLoading ? <Loader /> : <button className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer" type="button" onClick={(e) =>{handleSubmit(e)}}>Send Now</button> }
+          {isLoading 
+            ? <Loader /> 
+            : <button className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer" 
+              type="button" 
+              onClick={(e) =>{handleSubmit(e)}}>Send Now</button> }
         </div>
       </div>
     </div>
