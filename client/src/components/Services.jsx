@@ -33,9 +33,21 @@ const Services = () => {
         </div>
       </div>
       <div className='flex-1 flex flex-col justify-start items-center'>
-        <ServiceCard color="bg-[#2952E3]" title="Security Guaranteed" icon={< BsShieldFillCheck />} subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
-        <ServiceCard color="bg-[#8945f8]" title="Best exchange rates" icon={< BiSearchAlt />} subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
-        <ServiceCard color="bg-[#F84550]" title="Fastest Transactions" icon={< RiHeart2Fill />} subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
+        <ServiceCard 
+          color="bg-[#2952E3]" 
+          title="Security Guaranteed" 
+          icon={< BsShieldFillCheck  fontSize={21} className="text-white" />} 
+          subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
+        <ServiceCard 
+          color="bg-[#8945f8]" 
+          title="Best exchange rates" 
+          icon={< BiSearchAlt  fontSize={21} className="text-white" />} 
+          subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
+        <ServiceCard 
+          color="bg-[#F84550]" 
+          title="Fastest Transactions" 
+          icon={< RiHeart2Fill fontSize={21} className="text-white"/>} 
+          subtitle="Security is guaranted. We always maintain privacy and quality of our product"/>
       </div>
     </div>
   )
