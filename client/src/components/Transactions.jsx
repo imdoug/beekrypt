@@ -5,7 +5,7 @@ import { shortAddress } from "../utils/shortAddress";
 import dummyData from '../utils/dummyData'
 
 const TransactionsCard =({addressTo, addressFrom, timestamp, message, keyword, amount, url }) =>{
-  const giUrl = useFetch({keyword})
+  const gifUrl = useFetch( {keyword} )
   return (
     <div className="bg-[#181918] m-4 flex flex-1
         2xl:min-w-[450px]
@@ -24,7 +24,7 @@ const TransactionsCard =({addressTo, addressFrom, timestamp, message, keyword, a
           <p className='text-white text-base'>To: {shortAddress(addressTo)}</p>
         </a>
         <p className='text-white text-base'>Amount: {amount} ETH</p>
-        {message && (
+        { message && (
               <>
                 <br />
                 <p className="text-white text-base">Message: {message}</p>
@@ -54,9 +54,9 @@ const Transactions = () => {
           : <h3 className='text-white text-3xl text-center my-2'>Connect with your wallet to see latest transactions</h3> 
         }
         <div className="flex flex-wrap justify-center items-center mt-10">
-          {/* {[...dummyData, ...transactions].reverse().map((transaction, i) => (
+          {[...dummyData, ...transactions].reverse().map((transaction, i) => (
             <TransactionsCard key={i} {...transaction} />
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
